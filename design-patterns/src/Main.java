@@ -1,43 +1,22 @@
 import java.util.ArrayList;
 
-import planet.PlanetPrinter;
-import planet.Planet;
-import usuario.Theme;
-import usuario.User;
-import usuario.UserPrinter;
+import br.pucpr.usuario.PlanetPrinter;
 
-import static planet.PlanetType.*;
-import static usuario.Theme.LIGHT;
-
-public class Main {
-    public static void main(String[] args) {
-        final var usuarios = new ArrayList<User>();
-        usuarios.add(
-                new User(101L, "Carlos Eduardo de Souza", "carlos.souza@email.com", "12345678901"));
-        usuarios.add(new User(102L, "Ana Maria Silva", "ana.silva@email.com", "98765432100"));
-        usuarios.add(
-                new User(103L, "João Pedro de Alcântara Bragança", "joao.pedro@email.com", "45678912345"));
-        usuarios.add(new User(104L, "Mariana Costa", "marianacosta.email.com", "11122233344"));
-        usuarios.add(new User(105L, "Lucas Mendes", "lucas@email.com", "12345"));
-        usuarios.add(new User(106L, "", "beatriz@email.com", "55566677788"));
-
-        System.out.println("IMPRIMINDO USUARIOS");
-        System.out.println("-------------------");
-        new UserPrinter().print(usuarios, true, true, LIGHT);
-
-        final var planetas = new ArrayList<Planet>();
-        planetas.add(new Planet("Mercúrio", 4879, 57_910_000L, ROCK));
-        planetas.add(new Planet("Vênus", 12104, 108_200_000L, ROCK));
-        planetas.add(new Planet("Terra", 12756, 149_600_000L, ROCK));
-        planetas.add(new Planet("Marte", 6792, 227_940_000L, ROCK));
-        planetas.add(new Planet("Júpiter", 142984, 778_330_000L, GAS));
-        planetas.add(new Planet("Saturno", 120536, 1_429_400_000L, GAS));
-        planetas.add(new Planet("Urano", 51118, 2_870_990_000L, ICE));
-        planetas.add(new Planet("Netuno", 49528, 4_504_300_000L, ICE));
-        planetas.add(new Planet("Plutão", 2376, 5_906_380_000L, DWARF));
-        System.out.println();
-        System.out.println("IMPRIMINDO PLANETAS");
-        System.out.println("-------------------");
-        new PlanetPrinter().print(planetas, false, Theme.NORMAL);
-    }
+public static void main(String[] args) {
+//    var usuarios = new ArrayList<UsuarioPrinter.Usuario>();
+//    usuarios.add(new UsuarioPrinter.Usuario(101L, "Carlos Eduardo de Souza", "carlos.souza@email.com", "12345678901"));
+//    usuarios.add(new UsuarioPrinter.Usuario(102L, "Ana Maria Silva", "ana.silva@email.com", "98765432100"));
+//    usuarios.add(new UsuarioPrinter.Usuario(103L, "João Pedro de Alcântara Bragança", "joao.pedro@email.com", "45678912345"));
+//    usuarios.add(new UsuarioPrinter.Usuario(104L, "Mariana Costa", "marianacosta.email.com", "11122233344"));
+//    usuarios.add(new UsuarioPrinter.Usuario(105L, "Lucas Mendes", "lucas@email.com", "12345"));
+//    usuarios.add(new UsuarioPrinter.Usuario(106L, "", "beatriz@email.com", "55566677788"));
+//
+//    var printer = new UsuarioPrinter();
+//    printer.print(usuarios, true, true, "LIGHT");
+    var planetas = new ArrayList<PlanetPrinter.Planet>();
+    //String nome, Long diametro, Long distSolKm, Long distSolUa, String tipo
+    planetas.add(new PlanetPrinter.Planet("Saturno", 12122.02, 123678901.12, 21312341.12, "Gasoso"));
+    planetas.add(new PlanetPrinter.Planet("Terra", 12122.02, 123678901.12, 21312341.12, "Rochoso"));
+    var printer = new PlanetPrinter();
+    printer.print(planetas, true,"LIGHT");
 }
