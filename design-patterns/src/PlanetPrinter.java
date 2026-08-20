@@ -20,7 +20,7 @@ public class PlanetPrinter {
             // Borda superior e cabeçalho
             var sb = new StringBuilder();
             sb.repeat(borderChar, 100).append("\n");
-                sb.append(String.format("| %-5s | %-20s | %-22s | %-14s | %-14s |\n", "NOME", "DIAMETRO", "DISTSOLKM", "DISTSOLUA", "TIPO"));
+            sb.append(String.format("| %-5s | %-20s | %-22s | %-14s | %-14s |\n", "NOME", "DIAMETRO", "DISTSOLKM", "DISTSOLUA", "TIPO"));
             sb.repeat(borderChar, 100).append("\n");
             for (var planeta : lista) {
                 if (planeta != null) {
@@ -41,12 +41,12 @@ public class PlanetPrinter {
                     }
 
                     var distSolKm = planeta.distSolKm();
-                      String distSolKmStr;
-                      if (distSolKm == null) {
-                          distSolKmStr = "NÃO INFORMADO";
-                      } else {
-                          distSolKmStr = String.format("%.2e", distSolKm);
-                      }
+                    String distSolKmStr;
+                    if (distSolKm == null) {
+                        distSolKmStr = "NÃO INFORMADO";
+                    } else {
+                        distSolKmStr = String.format("%.2e", distSolKm);
+                    }
 
                     var distSolUa = planeta.distSolUa();
                     String distSolUaStr;
